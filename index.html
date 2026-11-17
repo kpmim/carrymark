@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b50">
+  <title>Student Marks Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-icon" aria-hidden="true"><i data-lucide="chart-no-axes-column-increasing"></i></div>
+      <div>
+        <h1>Student Marks Checker</h1>
+        <p>Semak markah penilaian berterusan anda</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <form id="searchForm" class="search-panel">
+      <label class="sr-only" for="studentId">Nombor pelajar</label>
+      <i data-lucide="user-round" class="search-user" aria-hidden="true"></i>
+      <input id="studentId" type="text" autocomplete="off" autocapitalize="characters" placeholder="Masukkan No. Pelajar (cth: IDC25-03-003)">
+      <button type="submit"><i data-lucide="search"></i><span>Semak</span></button>
+    </form>
+
+    <div id="message" class="message" role="status" aria-live="polite">Masukkan nombor pelajar untuk melihat keputusan.</div>
+
+    <section id="result" class="result-card" hidden aria-live="polite">
+      <div class="student-heading">
+        <div class="student-symbol" id="subjectIcon"><i data-lucide="clapperboard"></i></div>
+        <div class="student-info">
+          <h2 id="studentName">—</h2>
+          <div class="student-meta">
+            <span>No. Pelajar: <strong id="studentNumber">—</strong></span>
+            <span class="meta-separator">|</span>
+            <span>Kelas: <strong id="studentClass">—</strong></span>
+          </div>
+        </div>
+        <div class="subject-pill">
+          <span id="subjectCode">—</span>
+          <strong id="subjectName">—</strong>
+        </div>
+      </div>
+
+      <div class="carry-banner">
+        <span>Carry Marks</span>
+        <strong><b id="carryMark">—</b><small>/ <span id="carryMax">—</span></small></strong>
+      </div>
+
+      <div id="assessmentGrid" class="assessment-grid"></div>
+      <p class="result-note">Paparan ini menunjukkan markah penilaian berterusan yang direkodkan.</p>
+    </section>
+    <footer>STUDENT MARKS CHECKER <span>•</span> Academic record lookup</footer>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
